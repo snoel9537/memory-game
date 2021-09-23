@@ -7,7 +7,12 @@
     "@types/react": "^17.0.24",
     "@types/react-dom": "^17.0.9",
     "classnames": "^2.3.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
     "normalize.css": "^8.0.1",
+    "prettier": "^2.4.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
@@ -17,13 +22,46 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "src/**/*.{js,ts,tsx}": [
+      "eslint --fix"
+    ],
+    "src/**/*.{css,scss,json,md,html}": [
+      "prettier --write"
+    ]
+  },
+  "prettier": {
+    "endOfLine": "auto",
+    "singleQuote": true,
+    "trailingComma": "all",
+    "printWidth": 120
   },
   "eslintConfig": {
+    "plugins": [
+      "prettier"
+    ],
     "extends": [
       "react-app",
-      "react-app/jest"
-    ]
+      "plugin:prettier/recommended"
+    ],
+    "rules": {
+      "prefer-const": "warn",
+      "no-var": "warn",
+      "@typescript-eslint/no-unused-vars": "error",
+      "prettier/prettier": "warn",
+      "spaced-comment": [
+        "warn",
+        "always",
+        {
+          "markers": [
+            "/"
+          ]
+        }
+      ]
+    }
   },
   "browserslist": {
     "production": [
