@@ -1,0 +1,31 @@
+.wrapper {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: #e2aa01;
+
+  & .title {
+    font-size: 5em;
+    color: #fff;
+  }
+
+  & .btnWrapper {
+    display: flex;
+    justify-content: center;
+
+    & .btn {
+      color: white;
+      font-style: italic;
+      font-size: 2rem;
+      transition: 0.3s ease-in-out;
+      &:hover {
+        font-weight: bold;
+        font-style: italic;
+        transform: scale(1.5);
+      }
+    }
+  }
+}

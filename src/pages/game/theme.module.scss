@@ -1,0 +1,15 @@
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.fadeInOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: 1s ease-in-out;
+  &.show {
+    opacity: 1;
+  }
+}

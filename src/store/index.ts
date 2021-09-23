@@ -1,7 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
+import { gameReducer } from 'pages/game/store';
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    game: gameReducer,
+  },
   devTools: true,
 });
 
